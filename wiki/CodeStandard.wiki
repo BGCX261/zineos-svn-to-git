@@ -1,0 +1,74 @@
+Coding Standard
+================================================================================
+
+C++
+--------------------------------------------------------------------------------
+
+Actually this one looks reasonably good:
+http://www.possibility.com/Cpp/CppCodingStandard.html
+
+
+Files:
+Use lower case, use .cpp and .h extensions
+In header files use #pragma once instead of ugly #defines
+
+
+Spacing:
+2 lines between methods, classes
+1 line between functional blocks within a method or class...
+space expressions: a = b + c * d; NOT a=b+c*d
+printf("some string %d, %s\n", 1, "hello");
+
+Classes:
+CamelCase naming
+Method names CamelCase
+members m_memberName.
+Keep one main class per file
+Avoid GOD objects!
+Public -> protected -> Private
+
+
+Class Test
+{
+public:
+	/**
+	 * Create object
+	 */
+	Test(int count) : m_count(count)
+	{
+		// inlined.
+	}
+	
+	/**
+	 * Sophisticated
+	 */
+	Test(int count, const char * name);
+	
+	/**
+	 * Revolve the world
+	 /
+	void SomeMethod();
+	
+private:
+	/**
+	 * Do something
+	 */
+	void PrivateMethod();
+	
+	int m_count; // count
+};
+
+
+Scoping:
+Use { and } even for simple expressions
+if (test) DoSmth(); use
+if (test)
+{
+	DoSmth();
+}
+
+if (expr)
+{ // on new line
+} // on new line
+
+Same for all other compound statements

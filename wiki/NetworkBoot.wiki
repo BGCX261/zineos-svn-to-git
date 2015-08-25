@@ -1,0 +1,5 @@
+Create pxe bootable grub
+http://www.gnu.org/software/grub/manual/grub.html#Network
+
+Setup pxe server
+https://wiki.koeln.ccc.de/index.php/Ubuntu_PXE_Install

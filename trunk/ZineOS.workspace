@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="Workspace">
+		<Project filename="Runner/Runner.cbp" active="1">
+			<Depends filename="loader/loader.cbp" />
+			<Depends filename="trampoline/Trampoline.cbp" />
+			<Depends filename="buildrd/BuildRD.cbp" />
+			<Depends filename="kernel/kernel.cbp" />
+		</Project>
+		<Project filename="buildrd/BuildRD.cbp" />
+		<Project filename="loader/loader.cbp" />
+		<Project filename="trampoline/Trampoline.cbp" />
+		<Project filename="kernel/kernel.cbp" />
+	</Workspace>
+</CodeBlocks_workspace_file>

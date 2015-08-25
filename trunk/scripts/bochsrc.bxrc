@@ -1,0 +1,21 @@
+# amount of memory
+megs: 64
+
+
+log: bochsout.txt
+
+# floppy image
+floppya: 1_44= bin/floppy.img, status=inserted
+
+# boot
+boot: floppy
+
+# CPUS need smp support :(
+cpu: count=4
+
+# display_library: ( win32 sdl wx carbon amigaos beos macintosh nogui rfb term svga )
+display_library: x
+
+# No mouse
+mouse: enabled=0
+

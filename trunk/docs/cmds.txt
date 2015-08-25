@@ -1,0 +1,10 @@
+Intsall grub to a mounted disk image (asumes loop0 and ZineOS mount point):
+sudo grub-install --root-directory=/media/ZineOS /dev/loop0 --force
+
+
+If VirtualBox shows this error: ERROR: VirtualBox can't operate in VMX root mode
+then to remove KVM:
+sudo modprobe -r kvm_intel
+And add it back again
+sudo modprobe kvm_intel
+

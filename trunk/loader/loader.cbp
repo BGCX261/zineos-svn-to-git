@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Loader" />
+		<Option makefile="makefile" />
+		<Option execution_dir="../loader" />
+		<Option compiler="gccx86_64elf" />
+		<Option virtualFolders="src/;inc/;inc/libc/;" />
+		<Option extended_obj_names="1" />
+		<MakeCommands>
+			<Build command="$make -f $makefile" />
+			<CompileFile command="$make -f $makefile $file" />
+			<Clean command="$make -f $makefile clean" />
+			<DistClean command="$make -f $makefile distclean$target" />
+			<AskRebuildNeeded command="$make -q -f $makefile" />
+			<SilentBuild command="$make -s -f $makefile" />
+		</MakeCommands>
+		<Build>
+			<Target title="Release">
+				<Option output="../bin/loader.bin" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="" />
+				<Option object_output="obj" />
+				<Option type="5" />
+				<Option compiler="gccx86_64elf" />
+				<Compiler>
+					<Add option="-O3" />
+				</Compiler>
+				<MakeCommands>
+					<Build command="$make -f $makefile" />
+					<CompileFile command="$make -f $makefile $file" />
+					<Clean command="$make -f $makefile clean" />
+					<DistClean command="$make -f $makefile distclean$target" />
+					<AskRebuildNeeded command="$make -q -f $makefile" />
+					<SilentBuild command="$make -s -f $makefile" />
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Os" />
+			<Add option="-O3" />
+			<Add option="-Wextra" />
+			<Add option="-Wall" />
+			<Add option="-m32" />
+			<Add option="-fleading-underscore" />
+			<Add option="--std=gnu++0x" />
+			<Add option="-mno-red-zone" />
+			<Add option="-mno-mmx" />
+			<Add option="-mno-sse" />
+			<Add option="-mno-sse2" />
+			<Add option="-mno-sse3" />
+			<Add option="-mno-3dnow" />
+			<Add option="-ffreestanding" />
+			<Add option="-nostdlib" />
+			<Add option="-fno-builtin" />
+			<Add option="-nostartfiles" />
+			<Add option="-nodefaultlibs" />
+			<Add option="-fno-stack-protector" />
+			<Add option="-fno-rtti" />
+			<Add option="-nostdinc++" />
+			<Add option="-fno-nonansi-builtins" />
+			<Add option="-fno-exceptions" />
+			<Add directory="include/libc" />
+			<Add directory="include" />
+		</Compiler>
+		<Linker>
+			<Add option="-T link.ld" />
+			<Add option="-nostdlib" />
+			<Add option="-nodefaultlibs" />
+		</Linker>
+		<ExtraCommands>
+			<Add after="mcopy -D o ../bin/loader.bin a:" />
+		</ExtraCommands>
+		<Unit filename="include/kernel/acpi.h">
+			<Option virtualFolder="inc/" />
+		</Unit>
+		<Unit filename="include/kernel/asm.h">
+			<Option virtualFolder="inc/" />
+		</Unit>
+		<Unit filename="include/kernel/common.h">
+			<Option virtualFolder="inc/" />
+		</Unit>
+		<Unit filename="include/kernel/elf.h">
+			<Option virtualFolder="inc/" />
+		</Unit>
+		<Unit filename="include/kernel/frame.h">
+			<Option virtualFolder="inc/" />
+		</Unit>
+		<Unit filename="include/kernel/initrd.h">
+			<Option virtualFolder="inc/" />
+		</Unit>
+		<Unit filename="include/kernel/multiboot.h">
+			<Option virtualFolder="inc/" />
+		</Unit>
+		<Unit filename="include/kernel/system.h">
+			<Option virtualFolder="inc/" />
+		</Unit>
+		<Unit filename="include/kernel/video.h">
+			<Option virtualFolder="inc/" />
+		</Unit>
+		<Unit filename="include/kernel/virtual.h">
+			<Option virtualFolder="inc/" />
+		</Unit>
+		<Unit filename="include/libc/errno.h">
+			<Option virtualFolder="inc/libc/" />
+		</Unit>
+		<Unit filename="include/libc/stdarg.h">
+			<Option virtualFolder="inc/libc/" />
+		</Unit>
+		<Unit filename="include/libc/stddef.h">
+			<Option virtualFolder="inc/libc/" />
+		</Unit>
+		<Unit filename="include/libc/stdint.h">
+			<Option virtualFolder="inc/libc/" />
+		</Unit>
+		<Unit filename="include/libc/stdio.h">
+			<Option virtualFolder="inc/libc/" />
+		</Unit>
+		<Unit filename="include/libc/stdlib.h">
+			<Option virtualFolder="inc/libc/" />
+		</Unit>
+		<Unit filename="include/libc/string.h">
+			<Option virtualFolder="inc/libc/" />
+		</Unit>
+		<Unit filename="link.ld" />
+		<Unit filename="makefile" />
+		<Unit filename="src/acpi.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/boot.asm">
+			<Option weight="0" />
+			<Option virtualFolder="src/" />
+			<Option compiler="gcci586elf" use="1" buildCommand="nasm -f elf32 $file -o $object" />
+			<Option compiler="gccx86_64elf" use="1" buildCommand="nasm -f elf32 $file -o $object" />
+		</Unit>
+		<Unit filename="src/elf.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/frame.cpp">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/inc/defines.asm">
+			<Option compile="0" />
+			<Option link="0" />
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/initrd.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/kmain.cpp">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/multiboot.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/printf.cpp">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/stdlib.cpp">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/video.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/virtual.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<debugger />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

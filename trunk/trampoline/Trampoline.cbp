@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Trampoline" />
+		<Option makefile="makefile" />
+		<Option compiler="gccx86_64elf" />
+		<Option virtualFolders="src/;Others/;" />
+		<Build>
+			<Target title="Release">
+				<Option output="../bin/trampoline.bin" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="" />
+				<Option object_output="obj/" />
+				<Option type="5" />
+				<Option compiler="gccx86_64elf" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wextra" />
+			<Add option="-Wall" />
+		</Compiler>
+		<Linker>
+			<Add option="-T link.ld" />
+			<Add option="-nostdlib" />
+			<Add option="-nodefaultlibs" />
+		</Linker>
+		<ExtraCommands>
+			<Add after="mcopy -D o ../bin/trampoline.bin a:" />
+		</ExtraCommands>
+		<Unit filename="link.ld">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="makefile">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="src/trampoline.asm">
+			<Option virtualFolder="src/" />
+			<Option compiler="gccx86_64elf" use="1" buildCommand="nasm -f elf32 $file -o $object" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
